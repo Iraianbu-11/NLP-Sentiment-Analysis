@@ -5,6 +5,8 @@ from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 import pickle
 
+nltk.download('stopwords')
+
 # Load models and other resources
 predictor = pickle.load(open(r"models/model_xgb.pkl", "rb"))
 scaler = pickle.load(open(r"models/scaler.pkl", "rb"))
@@ -44,6 +46,6 @@ if st.button("Predict"):
         # Single text prediction
         prediction = single_prediction(predictor, scaler, cv, user_input)
         st.write(f"Predicted sentiment: {prediction}")
-        
+
     else:
         st.error("Please enter text for prediction.")
