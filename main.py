@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 import pickle
+import nltk
 
 nltk.download('stopwords')
 
